@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Add Task */
+
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: .3s;
+}
+
+.add-task input:focus {
+  border-color: #4CAF50;
+}
+
+.add-task button {
+  padding: 12px 25px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.add-task button:hover {
+  background: #3d9140;
+}
+
+/* Search */
+
+.Search-task {
+  margin-bottom: 20px;
+}
+
+.Search-task input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: .3s;
+}
+
+.Search-task input:focus {
+  border-color: #2196F3;
+}
+
+/* Filter Buttons */
+
+.Filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.Filter button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2196F3;
+  color: white;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.Filter button:hover {
+  background: #1976d2;
+}
+
+/* Table */
+
+.Task {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #4CAF50;
+  color: white;
+}
+
+thead td {
+  padding: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: .3s;
+}
+
+tbody tr:hover {
+  background: #f5f5f5;
+}
+
+tbody td {
+  padding: 15px;
+  text-align: center;
+}
+
+tbody button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f44336;
+  color: white;
+  transition: .3s;
+}
+
+tbody button:hover {
+  background: #d32f2f;
+}
+
+/* Checkbox */
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Count */
+
+.count {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .add-task {
+    flex-direction: column;
+  }
+
+  .add-task button {
+    width: 100%;
+  }
+
+  .Filter {
+    flex-direction: column;
+  }
+
+  .Filter button {
+    width: 100%;
+  }
+
+  .count {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  table {
+    min-width: 600px;
+  }
+}
