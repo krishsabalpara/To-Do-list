@@ -10,7 +10,7 @@ function App() {
   const [NewTask, setNewTask] = useState("")
   const [SearchText, setSearchText] = useState("")
   const [FixData, setFixData] = useState([])
-  
+
 
 
   const NewTaskHendal = (e) => {
@@ -115,19 +115,31 @@ function App() {
         return (
           el.States == "Panding" || el.States == "Progress"
         )
-      }) 
+      })
       setAlldata(filteddata);
     }
     if (value == "Completed") {
-      let filteddata = FixData.filter( (el) => {
-        return(
+      let filteddata = FixData.filter((el) => {
+        return (
           el.States == "Completed"
         )
-      } )
+      })
       setAlldata(filteddata)
     }
-    
+
   }
+
+  let PendingNumber = 0
+  let Completed = 0
+
+  FixData.map((el) => {
+    if (el.States == "Panding" || el.States == "Progress") {
+      PendingNumber++
+    }
+    if (el.States == "Completed") {
+      Completed++
+    }
+  })
 
 
 
@@ -167,7 +179,13 @@ function App() {
             {
               Alldata.map((e, ind) => {
                 return (
-                  <tr key={ind}>
+                  <tr key={ind} className={
+                    e.States === "Completed"
+                      ? "completed-row"
+                      : e.States === "Progress"
+                        ? "progress-row"
+                        : ""
+                  } >
                     <td>{ind + 1}</td>
                     <td>{e.Task}</td>
                     <td>{e.States}</td>
@@ -186,9 +204,9 @@ function App() {
       </div>
 
       <div className="count">
-        <span>Total: 0</span>
-        <span>Pending: 0</span>
-        <span>Completed: 0</span>
+        <span>Total: {FixData.length}</span>
+        <span>Pending: {PendingNumber}</span>
+        <span>Completed: {Completed}</span>
       </div>
 
     </div>
